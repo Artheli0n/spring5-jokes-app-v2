@@ -16,8 +16,10 @@ public class JokeController {
 
     @RequestMapping({"/", ""})
     public String showJoke(Model model) {
+        // add a "joke" attribute to our Spring Model View Controller
         model.addAttribute("joke", jokeService.getJoke());
 
+        // this tells spring to look to the templates folder for a file named "index.html"
         return "index";
     }
 }
